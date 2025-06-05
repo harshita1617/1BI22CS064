@@ -22,14 +22,15 @@ pipeline {
 
 
 
- stage('Run Application') {
- steps {
- // Start the JAR application
- sh 'java -jar finaleapp-1.0-SNAPSHOT.jar'
- }
- }
-
- }
+stage('Run Application') {
+    steps {
+        script {
+            dir('target') {
+                sh 'java -jar finaleapp-1.0-SNAPSHOT.jar'
+            }
+        }
+    }
+}
  post {
  success {
  echo 'Build and deployment successful!'
