@@ -31,6 +31,7 @@ stage('Run Application') {
         }
     }
 }
+ }
  post {
  success {
  echo 'Build and deployment successful!'
